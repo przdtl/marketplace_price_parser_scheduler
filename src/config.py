@@ -1,12 +1,15 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-class Setting(BaseSettings):
+class Settings(BaseSettings):
 
     MONGODB_HOST: str
     MONGODB_PORT: str
     MONGODB_USER: str
     MONGODB_PASS: str
+
+    MARKETPLACE_PRICE_PARSER_SERVICE_HOST: str
+    MARKETPLACE_PRICE_PARSER_SERVICE_PORT: int
 
     @property
     def mongodb_dsn(self) -> str:
